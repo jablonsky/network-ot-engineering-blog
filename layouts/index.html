@@ -1,0 +1,54 @@
+{{- define "main" }}
+<div class="landing">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Systems online · Field notes available</div>
+      <h1 id="hero-title">Engineering the networks<br>that keep <span>industry moving.</span></h1>
+      <p class="hero-lead">Practical thinking on enterprise networking, industrial connectivity, OT security, and the automation that brings it all together.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ "posts/" | relURL }}">Explore the articles <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" href="{{ "about/" | relURL }}">About this blog</a>
+      </div>
+      <div class="signal-row" aria-label="Core themes">
+        <span>Routing &amp; switching</span><span>OT / ICS</span><span>Security</span><span>Automation</span>
+      </div>
+    </div>
+
+    <div class="network-panel" aria-label="Stylised network topology">
+      <div class="panel-header"><span>LIVE TOPOLOGY</span><span class="panel-state">HEALTHY</span></div>
+      <div class="topology" aria-hidden="true">
+        <svg viewBox="0 0 520 390" role="img">
+          <defs><linearGradient id="route" x1="0" x2="1"><stop offset="0" stop-color="#24d6a1" stop-opacity=".25"/><stop offset=".5" stop-color="#24d6a1"/><stop offset="1" stop-color="#35a7ff" stop-opacity=".35"/></linearGradient></defs>
+          <g class="links" fill="none" stroke="url(#route)" stroke-width="2"><path d="M85 95 L250 55 L430 108"/><path d="M85 95 L160 220 L265 160 L430 108"/><path d="M160 220 L105 330 L270 315 L425 285 L430 108"/><path d="M265 160 L270 315"/></g>
+          <g class="nodes">
+            <g transform="translate(85 95)"><circle r="27"/><text y="5">WAN</text></g><g transform="translate(250 55)"><circle r="22"/><text y="5">FW</text></g><g transform="translate(430 108)"><circle r="29"/><text y="5">CORE</text></g><g transform="translate(160 220)"><circle r="25"/><text y="5">DIST</text></g><g transform="translate(265 160)"><circle r="23"/><text y="5">DMZ</text></g><g transform="translate(105 330)"><circle r="25"/><text y="5">PLC</text></g><g transform="translate(270 315)"><circle r="25"/><text y="5">HMI</text></g><g transform="translate(425 285)"><circle r="25"/><text y="5">SCADA</text></g>
+          </g>
+          <circle class="packet p1" r="4" fill="#fff"><animateMotion dur="4s" repeatCount="indefinite" path="M85 95 L250 55 L430 108"/></circle>
+          <circle class="packet p2" r="4" fill="#24d6a1"><animateMotion dur="5s" repeatCount="indefinite" path="M105 330 L270 315 L425 285 L430 108"/></circle>
+        </svg>
+      </div>
+      <div class="panel-metrics"><div><strong>99.99%</strong><span>Availability</span></div><div><strong>12 ms</strong><span>Core latency</span></div><div><strong>0</strong><span>Critical alerts</span></div></div>
+    </div>
+  </section>
+
+  <section class="expertise" aria-labelledby="expertise-title">
+    <div class="section-heading"><div><span class="kicker">THE PRACTICE</span><h2 id="expertise-title">Where IT meets the plant floor</h2></div><p>Clear explanations, tested patterns, and lessons learned across converged environments.</p></div>
+    <div class="expertise-grid">
+      <article class="expertise-card"><span class="card-number">01</span><div class="card-icon">↗</div><h3>Network Engineering</h3><p>Resilient campus, data-centre, and WAN design—from routing protocols to observability.</p><a href="{{ "tags/networking/" | relURL }}">View networking notes →</a></article>
+      <article class="expertise-card"><span class="card-number">02</span><div class="card-icon">⌁</div><h3>Operational Technology</h3><p>Reliable industrial architectures, segmentation, protocols, and lifecycle realities.</p><a href="{{ "tags/ot/" | relURL }}">Explore OT topics →</a></article>
+      <article class="expertise-card"><span class="card-number">03</span><div class="card-icon">◇</div><h3>Security &amp; Automation</h3><p>Pragmatic defence-in-depth plus repeatable tooling that reduces risk and toil.</p><a href="{{ "tags/security/" | relURL }}">Read security notes →</a></article>
+    </div>
+  </section>
+
+  <section class="latest" aria-labelledby="latest-title">
+    <div class="section-heading"><div><span class="kicker">FROM THE FIELD</span><h2 id="latest-title">Latest articles</h2></div><a class="all-posts" href="{{ "posts/" | relURL }}">View all articles →</a></div>
+    <div class="article-grid">
+      {{- range first 3 (where site.RegularPages "Section" "posts") }}
+      <article class="article-card"><div class="article-meta">{{ .Date.Format "02 Jan 2006" }} · {{ .ReadingTime }} min read</div><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Summary | plainify | truncate 150 }}</p><div class="article-footer">{{ with index .Params.tags 0 }}<span>{{ . }}</span>{{ end }}<a href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">↗</a></div></article>
+      {{- end }}
+    </div>
+  </section>
+
+  <section class="cta"><span class="kicker">STAY CURIOUS</span><h2>Build systems that are<br><em>observable, resilient, secure.</em></h2><p>New field notes on network and OT engineering, published as they are tested.</p><a class="button button-primary" href="{{ "index.xml" | relURL }}">Follow via RSS <span aria-hidden="true">→</span></a></section>
+</div>
+{{- end }}

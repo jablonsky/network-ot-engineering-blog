@@ -1,0 +1,61 @@
+baseURL = "https://blog.jablonsky.co.uk/"
+locale = "en-GB"
+title = "Network & OT Engineering"
+theme = "PaperMod"
+enableRobotsTXT = true
+summaryLength = 24
+
+[pagination]
+  pagerSize = 6
+
+[params]
+  env = "production"
+  description = "Practical network engineering, industrial connectivity, OT security, and automation notes from the field."
+  author = "Network & OT Engineering"
+  defaultTheme = "dark"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false
+  mainSections = ["posts"]
+
+  [params.label]
+    text = "N&OT"
+
+[menu]
+  [[menu.main]]
+    identifier = "articles"
+    name = "Articles"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "topics"
+    name = "Topics"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 30
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "Portfolio"
+    url = "https://www.jablonsky.co.uk/"
+    weight = 40
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"
