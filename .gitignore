@@ -3,3 +3,5 @@
 /.hugo_build.lock
 .DS_Store
 *.code-workspace
+node_modules/
+/static/admin/
