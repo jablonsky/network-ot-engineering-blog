@@ -29,6 +29,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install TinaCMS dependencies
+        run: npm ci
+
       - name: Install Hugo
         env:
           HUGO_VERSION: 0.170.0
@@ -38,7 +47,14 @@ jobs:
           tar -xzf "${RUNNER_TEMP}/hugo.tar.gz" -C "${RUNNER_TEMP}"
           echo "${RUNNER_TEMP}" >> "${GITHUB_PATH}"
 
-      - name: Build
+      - name: Build TinaCMS editor
+        env:
+          TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          TINA_BRANCH: main
+        run: npm run tina:build
+
+      - name: Build Hugo site
         run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/" --cacheDir "${{ runner.temp }}/hugo_cache"
 
       - name: Upload Pages artifact
