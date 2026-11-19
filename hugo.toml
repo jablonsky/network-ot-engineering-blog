@@ -43,7 +43,7 @@ summaryLength = 24
   [[menu.main]]
     identifier = "portfolio"
     name = "Portfolio"
-    url = "https://www.jablonsky.co.uk/"
+    url = "https://www.jablonsky.uk/"
     weight = 40
 
 [taxonomies]

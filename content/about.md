@@ -26,7 +26,6 @@ Raf is developing his career in network engineering, industrial networking, and 
 
 This blog complements his wider portfolio, where the underlying projects, case studies, and implementation evidence are documented in more detail.
 
-[Explore Raf Jablonsky's Network and OT Engineering Portfolio](https://www.jablonsky.co.uk/)
-
+[Explore Raf Jablonsky's Network and OT Engineering Portfolio](https://www.jablonsky.uk/)
 
 
