@@ -6,35 +6,27 @@ date = 2026-11-16
 
 ## Practical engineering for connected industry
 
-**Network & OT Engineering** is a working notebook for the systems between enterprise IT and the plant floor. It focuses on designs that can be operated at 02:00—not just diagrams that look good in a meeting.
+**Network & OT Engineering** is Raf Jablonsky's technical field notebook for the systems between enterprise IT and the plant floor. It focuses on designs that can be operated and supported under real conditions—not just diagrams that look good in a meeting.
 
 Topics include resilient routing and switching, industrial network architecture, IT/OT segmentation, secure remote access, observability, and network automation.
 
 Every article aims to leave you with a pattern, a command, a checklist, or a better question to take into your next design review.
 
+## What you will find here
 
-`insert some code here`
+- Practical explanations of networking and OT concepts
+- Implementation patterns tested through hands-on projects and labs
+- Security and segmentation guidance shaped by operational requirements
+- Automation approaches that emphasise validation, evidence, and safe change
+- Lessons that connect technical learning with real engineering practice
 
-and the next code below
+## About the author
 
-'another code below '
+Raf is developing his career in network engineering, industrial networking, and OT cybersecurity. His work combines technical study with practical evidence: lab architectures, packet analysis, network automation, security controls, engineering governance, and clear documentation.
 
-The management plane allows administrators to manage the device. This plane controls what the device does. This plane provides access for configuration, monitoring, and troubleshooting the network device. 
+This blog complements his wider portfolio, where the underlying projects, case studies, and implementation evidence are documented in more detail.
 
- Table 2 - Quick Comparison
-
-| Plane | Main purpose | Example |
-| --- | --- | --- |
-| **Data** | Forwards user traffic | Sending a frame out the correct port |
-| **Control** | Learns and selects paths | OSPF calculating the best route |
-| **Management** | Configures and monitors the device | An administrator connecting through SSH |
-
-```python
-some code here 
-```
-
-and more text
-
+[Explore Raf Jablonsky's Network and OT Engineering Portfolio](https://www.jablonsky.co.uk/)
 
 
 
