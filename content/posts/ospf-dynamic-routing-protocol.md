@@ -9,7 +9,7 @@ locatedI started updating the OSPF topology with a few selected Cisco routers de
 
 VS Code give us full control from the user GUI, which speeds up the experimentation process; in this case, I tried OSPF routing in a single area 0 (backbone).
 
-![VS Code Editor](/images/ospf-five-routers/vs-code.png#large "Picture 1 - VS Code Editor with Containerlab extension")
+![VS Code Editor](/images/ospf-five-routers/vs-code.png "Picture 1 - VS Code Editor with Containerlab extension")
 
 Picture 1 - VS Code with running Containerlab extension
 
