@@ -5,7 +5,7 @@ description = "Introduction to the Open Shortest Path First protocol. "
 tags = [ "Networking" ]
 +++
 
-locatedI started updating the OSPF topology with a few selected Cisco routers deployed in ContainerLab. ContainerLab is amazing when you configure it with the VS Code extension.
+I started updating the OSPF topology with a few selected Cisco routers deployed in ContainerLab. ContainerLab is amazing when you configure it with the VS Code extension.
 
 VS Code give us full control from the user GUI, which speeds up the experimentation process; in this case, I tried OSPF routing in a single area 0 (backbone).
 
@@ -71,7 +71,9 @@ Router-5#
 
 ![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#medium-large "Picture 2 - Five-router topology")Picture 2 - Five-router topology
 
-Let's configure a single OSPF area. Each router is localted in Area 0. The commands below use the exact interface IP addresses:
+Let's configure a single OSPF area. Each router is located in Area 0. The commands below use the exact interface IP addresses:
+
+#### Router 1
 
 ```
 enable
@@ -86,3 +88,72 @@ router ospf 1
 end
 write memory
 ```
+
+#### Router 2
+
+```
+enable
+configure terminal
+
+router ospf 1
+ router-id 2.2.2.2
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.10.10.2 0.0.0.0 area 0
+ network 10.1.0.1 0.0.0.0 area 0
+ network 10.2.0.1 0.0.0.0 area 0
+ network 10.3.0.1 0.0.0.0 area 0
+ passive-interface Loopback0
+
+end
+write memory
+```
+
+#### Router 3
+
+```
+enable
+configure terminal
+
+router ospf 1
+ router-id 3.3.3.3
+ network 3.3.3.3 0.0.0.0 area 0
+ network 10.1.0.2 0.0.0.0 area 0
+ passive-interface Loopback0
+
+end
+write memory
+```
+
+#### Router 4
+
+```
+enable
+configure terminal
+
+router ospf 1
+ router-id 4.4.4.4
+ network 4.4.4.4 0.0.0.0 area 0
+ network 10.2.0.2 0.0.0.0 area 0
+ passive-interface Loopback0
+
+end
+write memory
+```
+
+#### Router 5
+
+```
+enable
+configure terminal
+
+router ospf 1
+ router-id 5.5.5.5
+ network 5.5.5.5 0.0.0.0 area 0
+ network 10.3.0.2 0.0.0.0 area 0
+ passive-interface Loopback0
+
+end
+write memory
+```
+
+Each router was configured for OSPF Area 0. 
