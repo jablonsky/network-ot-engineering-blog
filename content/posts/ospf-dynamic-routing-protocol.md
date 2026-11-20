@@ -183,3 +183,93 @@ Router-1#
 ```
 
 Router 2 routing table (some lines are omitted):
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/11] via 10.10.10.1, 00:34:07, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+C        2.2.2.2 is directly connected, Loopback0
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/11] via 10.1.0.2, 00:27:25, Ethernet0/2
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/11] via 10.2.0.2, 00:23:50, Ethernet0/3
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/11] via 10.3.0.2, 00:12:26, Ethernet1/0
+      10.0.0.0/8 is variably subnetted, 8 subnets, 2 masks
+C        10.1.0.0/24 is directly connected, Ethernet0/2
+L        10.1.0.1/32 is directly connected, Ethernet0/2
+C        10.2.0.0/24 is directly connected, Ethernet0/3
+L        10.2.0.1/32 is directly connected, Ethernet0/3
+C        10.3.0.0/24 is directly connected, Ethernet1/0
+L        10.3.0.1/32 is directly connected, Ethernet1/0
+C        10.10.10.0/24 is directly connected, Ethernet0/1
+L        10.10.10.2/32 is directly connected, Ethernet0/1
+Router-2#
+
+```
+
+Router 3 routing table (some lines are omitted):
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/21] via 10.1.0.1, 00:28:33, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.1.0.1, 00:28:33, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+C        3.3.3.3 is directly connected, Loopback0
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/21] via 10.1.0.1, 00:24:53, Ethernet0/1
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/21] via 10.1.0.1, 00:13:29, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+C        10.1.0.0/24 is directly connected, Ethernet0/1
+L        10.1.0.2/32 is directly connected, Ethernet0/1
+O        10.2.0.0/24 [110/20] via 10.1.0.1, 00:28:33, Ethernet0/1
+O        10.3.0.0/24 [110/20] via 10.1.0.1, 00:28:33, Ethernet0/1
+O        10.10.10.0/24 [110/20] via 10.1.0.1, 00:28:33, Ethernet0/1
+Router-3#
+```
+
+Router 4 routing table (some lines are omitted):
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/21] via 10.2.0.1, 00:25:38, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.2.0.1, 00:25:38, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/21] via 10.2.0.1, 00:25:38, Ethernet0/1
+      4.0.0.0/32 is subnetted, 1 subnets
+C        4.4.4.4 is directly connected, Loopback0
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/21] via 10.2.0.1, 00:14:10, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.1.0.0/24 [110/20] via 10.2.0.1, 00:25:38, Ethernet0/1
+C        10.2.0.0/24 is directly connected, Ethernet0/1
+L        10.2.0.2/32 is directly connected, Ethernet0/1
+O        10.3.0.0/24 [110/20] via 10.2.0.1, 00:25:38, Ethernet0/1
+O        10.10.10.0/24 [110/20] via 10.2.0.1, 00:25:38, Ethernet0/1
+Router-4#
+```
+
+Router 5 routing table (some lines are omitted):
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/21] via 10.3.0.1, 00:14:53, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.3.0.1, 00:14:53, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/21] via 10.3.0.1, 00:14:53, Ethernet0/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/21] via 10.3.0.1, 00:14:53, Ethernet0/1
+      5.0.0.0/32 is subnetted, 1 subnets
+C        5.5.5.5 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.1.0.0/24 [110/20] via 10.3.0.1, 00:14:53, Ethernet0/1
+O        10.2.0.0/24 [110/20] via 10.3.0.1, 00:14:53, Ethernet0/1
+C        10.3.0.0/24 is directly connected, Ethernet0/1
+L        10.3.0.2/32 is directly connected, Ethernet0/1
+O        10.10.10.0/24 [110/20] via 10.3.0.1, 00:14:53, Ethernet0/1
+Router-5#
+```
