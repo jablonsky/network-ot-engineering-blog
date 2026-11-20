@@ -159,3 +159,27 @@ write memory
 Each router was configured for OSPF Area 0. Now we must visit the updated routing table on each router from the topology. A routing table is the router's map of where IP networks are located. This is the router's brain, deciding where to send packets next. 
 
 Let's see what changed. 
+
+Router 1 routing table (some lines are omitted):
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.10.10.2, 00:32:18, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/21] via 10.10.10.2, 00:25:36, Ethernet0/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/21] via 10.10.10.2, 00:21:56, Ethernet0/1
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/21] via 10.10.10.2, 00:10:32, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.1.0.0/24 [110/20] via 10.10.10.2, 00:31:47, Ethernet0/1
+O        10.2.0.0/24 [110/20] via 10.10.10.2, 00:31:40, Ethernet0/1
+O        10.3.0.0/24 [110/20] via 10.10.10.2, 00:31:36, Ethernet0/1
+C        10.10.10.0/24 is directly connected, Ethernet0/1
+L        10.10.10.1/32 is directly connected, Ethernet0/1
+Router-1#
+```
+
+Router 2 routing table (some lines are omitted):
