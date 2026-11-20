@@ -156,4 +156,6 @@ end
 write memory
 ```
 
-Each router was configured for OSPF Area 0. 
+Each router was configured for OSPF Area 0. Now we must visit the updated routing table on each router from the topology. A routing table is the router's map of where IP networks are located. This is the router's brain, deciding where to send packets next. 
+
+Let's see what changed. 
