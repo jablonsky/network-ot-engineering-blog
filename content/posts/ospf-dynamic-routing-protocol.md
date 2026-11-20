@@ -9,7 +9,7 @@ I started updating the OSPF topology with a few selected Cisco routers deployed 
 
 VS Code give us full control from the user GUI, which speeds up the experimentation process; in this case, I tried OSPF routing in a single area 0 (backbone).
 
-![](/images/ospf-five-routers/vs-code.png#large)
+![VS Code Editor](/images/ospf-five-routers/vs-code.png#large "Picture 1 - VS Code Editor with Containerlab extension")
 
 Below, you can see five routers forming the topology above with configured IP addresses on their interfaces:
 
