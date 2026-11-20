@@ -11,7 +11,7 @@ VS Code give us full control from the user GUI, which speeds up the experimentat
 
 ![](/images/ospf-five-routers/vs-code.png)
 
-Below, you can see a five-router topology configured with interfaces to IP addresses: 
+Below, you can see five routers forming the topology above with configured IP addresses on their interfaces:
 
 ```
 Router-1#show ip int brief
