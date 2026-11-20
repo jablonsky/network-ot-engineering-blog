@@ -290,7 +290,9 @@ Router-5#
 
 ## Neighbour Table
 
-The OSPF neighbour table shows routers that have formed an OSPF relationship on directly connected links.  
+The OSPF neighbour table shows routers that have formed an OSPF relationship on directly connected links. An OSPF neighbour table includes Neighbour ID and priority on this network. Priority helps elect the DR and BDR. A priority of 0 prevents a router from becoming the DR or BDR.  The next column is state, which indicates synchronisation of the OSPF database. 
+
+A dead time is the time remaining 
 
 Router 1
 
