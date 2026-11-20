@@ -55,6 +55,9 @@
 .article-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); }
 .article-footer span { color: var(--accent); font: .65rem ui-monospace,monospace; text-transform: uppercase; }
 .article-footer a { font-size: 1.25rem; }
+.md-content img[src*="#small"] { display: block; width: 40%; max-width: 100%; height: auto; margin-inline: auto; }
+.md-content img[src*="#medium"] { display: block; width: 65%; max-width: 100%; height: auto; margin-inline: auto; }
+.md-content img[src*="#large"] { display: block; width: 100%; max-width: 100%; height: auto; margin-inline: auto; }
 .cta { margin: 32px 0 80px; padding: 88px 48px; text-align: center; border: 1px solid rgba(36,214,161,.22); border-radius: 8px; background: radial-gradient(circle at 50% 120%,rgba(36,214,161,.14),transparent 48%),linear-gradient(135deg,#101b23,#0c141a); }
 .cta h2 { font-size: clamp(2.2rem,4.5vw,4rem); line-height: 1.06; letter-spacing: -.045em; margin: 20px 0; }
 .cta h2 em { color: var(--accent); font-style: normal; }
