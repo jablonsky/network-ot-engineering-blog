@@ -5,11 +5,13 @@ description = "Introduction to the Open Shortest Path First protocol. "
 tags = [ "Networking" ]
 +++
 
-I started updating the OSPF topology with a few selected Cisco routers deployed in ContainerLab. ContainerLab is amazing when you configure it with the VS Code extension.
+locatedI started updating the OSPF topology with a few selected Cisco routers deployed in ContainerLab. ContainerLab is amazing when you configure it with the VS Code extension.
 
 VS Code give us full control from the user GUI, which speeds up the experimentation process; in this case, I tried OSPF routing in a single area 0 (backbone).
 
 ![VS Code Editor](/images/ospf-five-routers/vs-code.png#large "Picture 1 - VS Code Editor with Containerlab extension")
+
+Picture 1 - VS Code with running Containerlab extension
 
 Below, you can see five routers forming the topology above with configured IP addresses on their interfaces:
 
@@ -67,7 +69,9 @@ Ethernet0/3            unassigned      YES NVRAM  administratively down down
 Router-5#
 ```
 
-![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#large "Picture 2 - Five-router topology")Picture 1 - Five-router topology
+![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#large "Picture 2 - Five-router topology")Picture 2 - Five-router topology
+
+Let's configure a single OSPF area. Each router is localted in Area 0. The commands below use the exact interface IP addresses:
 
 ```
 enable
