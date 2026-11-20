@@ -14,6 +14,30 @@ VS Code give us full control from the user GUI, which speeds up the experimentat
 Below, you can see a five-router topology configured with interfaces to IP addresses: 
 
 ```
+Router-2#show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Ethernet0/0            172.16.63.12    YES manual up                    up      
+Ethernet0/1            10.10.10.2      YES manual up                    up      
+Ethernet0/2            10.1.0.1        YES manual up                    up      
+Ethernet0/3            10.2.0.1        YES manual up                    up      
+Ethernet1/0            10.3.0.1        YES manual up                    up      
+Ethernet1/1            unassigned      YES NVRAM  administratively down down    
+Ethernet1/2            unassigned      YES NVRAM  administratively down down    
+Ethernet1/3            unassigned      YES NVRAM  administratively down down    
+Router-2#
+```
+
+```
+Router-3#show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Ethernet0/0            172.16.63.13    YES manual up                    up      
+Ethernet0/1            10.1.0.2        YES manual up                    up      
+Ethernet0/2            unassigned      YES NVRAM  administratively down down    
+Ethernet0/3            unassigned      YES NVRAM  administratively down down    
+Router-3#
+```
+
+```
 Router-4#show ip int brief
 Interface              IP-Address      OK? Method Status                Protocol
 Ethernet0/0            172.16.63.14    YES manual up                    up      
