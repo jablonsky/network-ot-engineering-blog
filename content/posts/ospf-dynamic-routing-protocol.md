@@ -156,7 +156,21 @@ end
 write memory
 ```
 
+## Routing Table
+
 Each router was configured for OSPF Area 0. Now we must visit the updated routing table on each router from the topology. A routing table is the router's map of where IP networks are located. This is the router's brain, deciding where to send packets next. 
+
+A routing table supplies in common route codes:
+
+&#x20;C = Connected network
+
+L = Local interface address
+
+O = Learned through OSPF
+
+S = Static route
+
+Regardless, this code is omitted from the presented script to make it easier to read. 
 
 Let's see what changed. 
 
@@ -272,4 +286,32 @@ C        10.3.0.0/24 is directly connected, Ethernet0/1
 L        10.3.0.2/32 is directly connected, Ethernet0/1
 O        10.10.10.0/24 [110/20] via 10.3.0.1, 00:14:53, Ethernet0/1
 Router-5#
+```
+
+## Neighbour Table
+
+The OSPF neighbour table shows routers that have formed an OSPF relationship on directly connected links.  
+
+Router 1
+
+```
+Router-1#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/BDR        00:00:36    10.10.10.2      Ethernet0/1
+Router-1#
+
+```
+
+Router 2
+
+```
+Router-2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+5.5.5.5           1   FULL/BDR        00:00:35    10.3.0.2        Ethernet1/0
+4.4.4.4           1   FULL/BDR        00:00:33    10.2.0.2        Ethernet0/3
+3.3.3.3           1   FULL/BDR        00:00:33    10.1.0.2        Ethernet0/2
+1.1.1.1           1   FULL/DR         00:00:31    10.10.10.1      Ethernet0/1
+Router-2#
 ```
