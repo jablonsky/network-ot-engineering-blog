@@ -67,7 +67,7 @@ Ethernet0/3            unassigned      YES NVRAM  administratively down down
 Router-5#
 ```
 
-![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#medium "Picture 1 - Five-router topology")Picture 1 - Five-router topology
+![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#large "Picture 1 - Five-router topology")Picture 1 - Five-router topology
 
 ```
 enable
