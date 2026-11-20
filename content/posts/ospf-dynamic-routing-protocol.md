@@ -69,7 +69,7 @@ Ethernet0/3            unassigned      YES NVRAM  administratively down down
 Router-5#
 ```
 
-![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#large "Picture 2 - Five-router topology")Picture 2 - Five-router topology
+![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#medium-large "Picture 2 - Five-router topology")Picture 2 - Five-router topology
 
 Let's configure a single OSPF area. Each router is localted in Area 0. The commands below use the exact interface IP addresses:
 
