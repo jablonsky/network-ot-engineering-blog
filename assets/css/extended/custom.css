@@ -4,6 +4,8 @@
 .nav { max-width: 1180px; }
 .logo a { font-family: ui-monospace,SFMono-Regular,Menlo,monospace; color: var(--accent); letter-spacing: -.04em; }
 #menu a { font-size: .88rem; letter-spacing: .04em; }
+.header #menu a,.header .theme-toggle { color: #dbe8ee; }
+.header #menu a:hover,.header #menu a:focus-visible,.header .theme-toggle:hover,.header .theme-toggle:focus-visible { color: var(--accent); }
 .footer { border-top: 1px solid var(--line); }
 .landing { padding-bottom: 32px; }
 .hero { min-height: 670px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 64px; padding: 72px 0 88px; position: relative; }
