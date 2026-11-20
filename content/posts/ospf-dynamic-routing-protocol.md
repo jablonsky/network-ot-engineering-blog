@@ -315,3 +315,33 @@ Neighbor ID     Pri   State           Dead Time   Address         Interface
 1.1.1.1           1   FULL/DR         00:00:31    10.10.10.1      Ethernet0/1
 Router-2#
 ```
+
+Router 3
+
+```
+Router-3#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/DR         00:00:33    10.1.0.1        Ethernet0/1
+Router-3#
+```
+
+Router 4
+
+```
+Router-4#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/DR         00:00:36    10.2.0.1        Ethernet0/1
+Router-4#
+```
+
+Router 5
+
+```
+Router-5#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/DR         00:00:32    10.3.0.1        Ethernet0/1
+Router-5#
+```
