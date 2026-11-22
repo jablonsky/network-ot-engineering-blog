@@ -298,7 +298,23 @@ We can see the newly added route inside each routing table. For example, Router 
 
 The OSPF neighbour table shows routers that have formed an OSPF relationship on directly connected links. An OSPF neighbour table includes Neighbour ID and priority on this network. Priority helps elect the DR and BDR. A priority of 0 prevents a router from becoming the DR or BDR.  The next column is state, which indicates OSPF database synchronisation.
 
-A dead time is the time remaining
+As mentioned above, that relationship is the direct connection to the other OSPF routers with its local interfaces. 
+
+\| Field | Explanation |
+
+\|---|---|
+
+\| \*\*Neighbor ID — 2.2.2.2\*\* | The neighbour’s \*\*OSPF Router ID\*\*. It is not necessarily the neighbour’s interface IP address. |
+
+\| \*\*Pri — 1\*\* | The neighbour’s OSPF interface priority, used to elect the \*\*DR\*\* and \*\*BDR\*\* on multi-access networks. |
+
+\| \*\*State — FULL/BDR\*\* | \`FULL\` means the routers have synchronised their link-state databases. \`BDR\` means this neighbour is the \*\*Backup Designated Router\*\* on this network segment. |
+
+\| \*\*Dead Time — 00:00:36\*\* | Time remaining before the neighbour is declared down if no Hello packet arrives. Receiving a Hello resets this timer. |
+
+\| \*\*Address — 10.10.10.2\*\* | The neighbour’s interface IP address on the shared link. |
+
+\| \*\*Interface — Ethernet0/1\*\* | The local router interface through which the neighbour is reached. |
 
 Router 1
 
