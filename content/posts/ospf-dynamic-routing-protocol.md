@@ -311,9 +311,9 @@ As mentioned above, that relationship is the direct connection to the other OSPF
 
 Table 1 - Router 1 Neighbour Table
 
-For example, Router 1 has one OSPF neighbour, Router-ID 2.2.2.2, with neighbour interface address 10.10.10.2, and can reach this connection through local interface Ethernet 0/1. 
+For example, Router 1 has one OSPF neighbour, Router-ID 2.2.2.2, with neighbour interface address 10.10.10.2, and can reach this connection through local interface Ethernet 0/1.
 
-This does not mean every router in OSPF will appear in the Neighbour Table. Those additional distinctions (connections) which are not directly linked to the router are placed inside the Link State Database, which is the topology table described below in this article. 
+This does not mean every router in OSPF will appear in the Neighbour Table. Those additional distinctions (connections) which are not directly linked to the router are placed inside the Link State Database, which is the topology table described below in this article.
 
 Router 1
 
@@ -371,8 +371,14 @@ Router-5#
 
 ## Topology Table (LSDB)
 
-The actual OSPF database, or Link State Database (LSDB), is a router topology table. This is topology information for the OSPF area. This table contains more information about the routers, networks, and links in OSPF. Each router in the same area should have an identical LSDB table. How is it built? 
+The actual OSPF database, or Link State Database (LSDB), is a router topology table. This is topology information for the OSPF area. This table contains more information about the routers, networks, and links in OSPF. Each router in the same area should have an identical LSDB table. How is it built?
 
-OSPF routers discover neighbours using Hello packets. Neighbours exchange Link State Advertisements (LSAs). Each router stores the LSAs in its LSDB. 
+OSPF routers discover neighbours using Hello packets. Neighbours exchange Link State Advertisements (LSAs). Each router stores the LSAs in its LSDB.
 
-The router runs the Shortest Path First (SPF) algorithm; as a result, it installs the shortest path in the router's routing table. 
+The router runs the Shortest Path First (SPF) algorithm; as a result, it installs the shortest path in the router's routing table.
+
+| Table                     | Purpose                                  | Command                 |
+| ------------------------- | ---------------------------------------- | ----------------------- |
+| **Neighbour table**       | Lists directly connected OSPF neighbours | `show ip ospf neighbor` |
+| **Topology table / LSDB** | Describes the OSPF network topology      | `show ip ospf database` |
+| **Routing table**         | Contains the best calculated routes      | `show ip route ospf`    |
