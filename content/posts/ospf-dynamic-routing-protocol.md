@@ -158,6 +158,8 @@ end
 write memory
 ```
 
+In OSPF, we have 3 router tables and 5 independent packet flows. I will explain it in the article below. 
+
 ## Routing Table
 
 All routers were configured for OSPF Area 0. Now I need to check the routing table on each router in the topology to confirm the changes.
