@@ -302,9 +302,9 @@ As mentioned above, that relationship is the direct connection to the other OSPF
 
 | Field                       | Explanation                                                                                                                                                    |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Neighbor ID — 2.2.2.2**   | The neighbour’s **OSPF Router ID**. It is not necessarily the neighbour’s interface IP address.                                                                |
+| **Neighbour ID — 2.2.2.2**  | The neighbour’s **OSPF Router ID**. It is not necessarily the neighbour’s interface IP address.                                                                |
 | **Pri — 1**                 | The neighbour’s OSPF interface priority, used to elect the **DR** and **BDR** on multi-access networks.                                                        |
-| **State — FULL/BDR**        | `FULL` means the routers have synchronized their link-state databases. `BDR` means this neighbour is the **Backup Designated Router** on this network segment. |
+| **State — FULL/BDR**        | `FULL` means the routers have synchronised their link-state databases. `BDR` means this neighbour is the **Backup Designated Router** on this network segment. |
 | **Dead Time — 00:00:36**    | Time remaining before the neighbour is declared down if no Hello packet arrives. Receiving a Hello resets this timer.                                          |
 | **Address — 10.10.10.2**    | The neighbour’s interface IP address on the shared link.                                                                                                       |
 | **Interface — Ethernet0/1** | The local router interface through which the neighbour is reached.                                                                                             |
