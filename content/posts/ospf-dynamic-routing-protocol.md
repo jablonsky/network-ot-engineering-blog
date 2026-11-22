@@ -5,13 +5,15 @@ description = "Introduction to the Open Shortest Path First protocol. "
 tags = [ "Networking" ]
 +++
 
-I started updating the OSPF topology with a few selected Cisco routers deployed in ContainerLab. ContainerLab is amazing when you configure it with the VS Code extension.
+To show how the OSPF protocol works, I created a topology with a few selected Cisco routers in ContainerLab. ContainerLab is amazing when you configure it with the VS Code extension software.
 
-VS Code give us full control from the user GUI, which speeds up the experimentation process; in this case, I tried OSPF routing in a single area 0 (backbone).
+This extension is called Containerlab and provides a graphical representation of Your Topology.
 
-![VS Code Editor](/images/ospf-five-routers/vs-code.png "Picture 1 - VS Code Editor with Containerlab extension")
+![](/images/ospf-five-routers/container-lab.png)Picture 1 - Containerlab extension shown in VS Code
 
-Picture 1 - VS Code with running Containerlab extension
+Therefore, VS Code with this extension gives us full control through the friendly interface (GUI), which speeds up the experimentation process; in this case, I tried OSPF routing in a single area 0 (backbone).
+
+![VS Code Editor](/images/ospf-five-routers/vs-code.png "Picture 1 - VS Code Editor with Containerlab extension")Picture 2 - VS Code with running Containerlab extension
 
 Below, you can see five routers forming the topology above with configured IP addresses on their interfaces:
 
@@ -69,9 +71,9 @@ Ethernet0/3            unassigned      YES NVRAM  administratively down down
 Router-5#
 ```
 
-![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#medium-large "Picture 2 - Five-router topology")Picture 2 - Five-router topology
+![Five-router topology](/images/ospf-five-routers/2026-11-20_19-20.png#medium-large "Picture 2 - Five-router topology")Picture 3 - Five-router topology
 
-Let's configure a single OSPF area. Each router is located in Area 0. The commands below use the exact interface IP addresses:
+Let's configure a single OSPF area in this topology. For now, I decided to place each router in Area 0. The commands below use the exact interface IP addresses:
 
 #### Router 1
 
@@ -158,9 +160,11 @@ write memory
 
 ## Routing Table
 
-Each router was configured for OSPF Area 0. Now we must visit the updated routing table on each router from the topology. A routing table is the router's map of where IP networks are located. This is the router's brain, deciding where to send packets next. 
+All routers were configured for OSPF Area 0. Now I need to check the routing table on each router in the topology to confirm the changes. 
 
-A routing table supplies in common route codes:
+A routing table is the router's map of where IP networks are located. This is the router's brain, deciding where to send packets next.
+
+A routing table supplies common route codes:
 
 &#x20;C = Connected network
 
@@ -170,9 +174,9 @@ O = Learned through OSPF
 
 S = Static route
 
-Regardless, this code is omitted from the presented script to make it easier to read. 
+Regardless, this code is omitted from the presented script to make it easier to read.
 
-Let's see what changed. 
+Let's see what changed.
 
 Router 1 routing table (some lines are omitted):
 
@@ -288,11 +292,13 @@ O        10.10.10.0/24 [110/20] via 10.3.0.1, 00:14:53, Ethernet0/1
 Router-5#
 ```
 
+We can see the newly added route inside each routing table. For example, Router 5 shows 8 potential OSPF protocol routes on its Ethernet 0/1 interface. 
+
 ## Neighbour Table
 
-The OSPF neighbour table shows routers that have formed an OSPF relationship on directly connected links. An OSPF neighbour table includes Neighbour ID and priority on this network. Priority helps elect the DR and BDR. A priority of 0 prevents a router from becoming the DR or BDR.  The next column is state, which indicates OSPF database synchronisation. 
+The OSPF neighbour table shows routers that have formed an OSPF relationship on directly connected links. An OSPF neighbour table includes Neighbour ID and priority on this network. Priority helps elect the DR and BDR. A priority of 0 prevents a router from becoming the DR or BDR.  The next column is state, which indicates OSPF database synchronisation.
 
-A dead time is the time remaining 
+A dead time is the time remaining
 
 Router 1
 
@@ -350,4 +356,4 @@ Router-5#
 
 ## Topology Table
 
-The actual OSPF database, or Link State Database (LSDB), isthe database  
+The actual OSPF database, or Link State Database (LSDB), is a router table 
