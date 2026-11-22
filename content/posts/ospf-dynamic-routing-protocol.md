@@ -371,4 +371,8 @@ Router-5#
 
 ## Topology Table (LSDB)
 
-The actual OSPF database, or Link State Database (LSDB), is a router topology table. This is topology information for the OSPF area. This table contains more information about the routers, networks, and links in OSPF. 
+The actual OSPF database, or Link State Database (LSDB), is a router topology table. This is topology information for the OSPF area. This table contains more information about the routers, networks, and links in OSPF. Each router in the same area should have an identical LSDB table. How is it built? 
+
+OSPF routers discover neighbours using Hello packets. Neighbours exchange Link State Advertisements (LSAs). Each router stores the LSAs in its LSDB. 
+
+The router runs the Shortest Path First (SPF) algorithm; as a result, it installs the shortest path in the router's routing table. 
