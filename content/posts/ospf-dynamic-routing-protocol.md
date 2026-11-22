@@ -382,3 +382,5 @@ The router runs the Shortest Path First (SPF) algorithm; as a result, it install
 | **Neighbour table**       | Lists directly connected OSPF neighbours | `show ip ospf neighbor` |
 | **Topology table / LSDB** | Describes the OSPF network topology      | `show ip ospf database` |
 | **Routing table**         | Contains the best calculated routes      | `show ip route ospf`    |
+
+Table 2 - OSPF router commands.
