@@ -309,6 +309,12 @@ As mentioned above, that relationship is the direct connection to the other OSPF
 | **Address — 10.10.10.2**    | The neighbour’s interface IP address on the shared link.                                                                                                       |
 | **Interface — Ethernet0/1** | The local router interface through which the neighbour is reached.                                                                                             |
 
+Table 1 - Router 1 Neighbour Table
+
+For example, Router 1 has one OSPF neighbour, Router-ID 2.2.2.2, with neighbour interface address 10.10.10.2, and can reach this connection through local interface Ethernet 0/1. 
+
+This does not mean every router in OSPF will appear in the Neighbour Table. Those additional distinctions (connections) which are not directly linked to the router are placed inside the Link State Database, which is the topology table described below in this article. 
+
 Router 1
 
 ```
@@ -363,6 +369,6 @@ Neighbor ID     Pri   State           Dead Time   Address         Interface
 Router-5#
 ```
 
-## Topology Table
+## Topology Table (LSDB)
 
-The actual OSPF database, or Link State Database (LSDB), is a router table
+The actual OSPF database, or Link State Database (LSDB), is a router topology table. This is topology information for the OSPF area. This table contains more information about the routers, networks, and links in OSPF. 
