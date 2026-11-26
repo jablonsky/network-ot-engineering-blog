@@ -14,21 +14,39 @@
       </div>
     </div>
 
-    <div class="network-panel" aria-label="Stylised network topology">
-      <div class="panel-header"><span>LIVE TOPOLOGY</span><span class="panel-state">HEALTHY</span></div>
-      <div class="topology" aria-hidden="true">
-        <svg viewBox="0 0 520 390" role="img">
-          <defs><linearGradient id="route" x1="0" x2="1"><stop offset="0" stop-color="#24d6a1" stop-opacity=".25"/><stop offset=".5" stop-color="#24d6a1"/><stop offset="1" stop-color="#35a7ff" stop-opacity=".35"/></linearGradient></defs>
-          <g class="links" fill="none" stroke="url(#route)" stroke-width="2"><path d="M85 95 L250 55 L430 108"/><path d="M85 95 L160 220 L265 160 L430 108"/><path d="M160 220 L105 330 L270 315 L425 285 L430 108"/><path d="M265 160 L270 315"/></g>
-          <g class="nodes">
-            <g transform="translate(85 95)"><circle r="27"/><text y="5">WAN</text></g><g transform="translate(250 55)"><circle r="22"/><text y="5">FW</text></g><g transform="translate(430 108)"><circle r="29"/><text y="5">CORE</text></g><g transform="translate(160 220)"><circle r="25"/><text y="5">DIST</text></g><g transform="translate(265 160)"><circle r="23"/><text y="5">DMZ</text></g><g transform="translate(105 330)"><circle r="25"/><text y="5">PLC</text></g><g transform="translate(270 315)"><circle r="25"/><text y="5">HMI</text></g><g transform="translate(425 285)"><circle r="25"/><text y="5">SCADA</text></g>
-          </g>
-          <circle class="packet p1" r="4" fill="#fff"><animateMotion dur="4s" repeatCount="indefinite" path="M85 95 L250 55 L430 108"/></circle>
-          <circle class="packet p2" r="4" fill="#24d6a1"><animateMotion dur="5s" repeatCount="indefinite" path="M105 330 L270 315 L425 285 L430 108"/></circle>
-        </svg>
-      </div>
-      <div class="panel-metrics"><div><strong>99.99%</strong><span>Availability</span></div><div><strong>12 ms</strong><span>Core latency</span></div><div><strong>0</strong><span>Critical alerts</span></div></div>
-    </div>
+    <figure class="network-panel" aria-labelledby="purdue-title" aria-describedby="purdue-note">
+      <figcaption class="panel-header">
+        <span id="purdue-title">Purdue model</span>
+        <span class="panel-state">IT / OT reference</span>
+      </figcaption>
+      <ul class="purdue-stack" role="list">
+        <li class="purdue-tier purdue-enterprise">
+          <span class="purdue-level">L4–5</span>
+          <div><strong>Enterprise IT</strong><span>Business applications · ERP</span></div>
+        </li>
+        <li class="purdue-tier purdue-boundary">
+          <span class="purdue-level">L3.5</span>
+          <div><strong>Industrial DMZ</strong><span>Firewall boundaries · Data brokers</span></div>
+        </li>
+        <li class="purdue-tier">
+          <span class="purdue-level">L3</span>
+          <div><strong>Site operations</strong><span>MES · Plant historian</span></div>
+        </li>
+        <li class="purdue-tier">
+          <span class="purdue-level">L2</span>
+          <div><strong>Supervisory control</strong><span>SCADA · Operator HMIs</span></div>
+        </li>
+        <li class="purdue-tier">
+          <span class="purdue-level">L1</span>
+          <div><strong>Basic control</strong><span>PLCs · RTUs</span></div>
+        </li>
+        <li class="purdue-tier">
+          <span class="purdue-level">L0</span>
+          <div><strong>Physical process</strong><span>Sensors · Actuators</span></div>
+        </li>
+      </ul>
+      <p class="purdue-note" id="purdue-note">The industrial DMZ is a modern security boundary between enterprise IT and plant operations, not an original Purdue level.</p>
+    </figure>
   </section>
 
   <section class="expertise" aria-labelledby="expertise-title">
