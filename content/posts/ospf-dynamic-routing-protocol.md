@@ -5,6 +5,8 @@ description = "Introduction to the Open Shortest Path First protocol - Part 1."
 tags = [ "Networking OSPF Dynamic Routing" ]
 +++
 
+# Introduction to Dynamic Routing, OSPF Protocol - Part 1
+
 To show how the OSPF protocol works, I created a topology with a few selected Cisco routers in ContainerLab. ContainerLab is an amazing tool when you configure it with the VS Code extension.
 
 This extension is called Containerlab and provides a graphical representation of Your Topology.
@@ -481,7 +483,7 @@ Next, check the topology table (LSDB) with the OSPF configuration shown.
 
 Use the simple command: **show ip protocols**.
 
-This read-only command summarises the routing protocol running on the router and some of its settings. In the example below, we can see that OSPF is enabled with a process ID, router ID, network statement, and passive interfaces. 
+This read-only command summarises the routing protocol running on the router and some of its settings. In the example below, we can see that OSPF is enabled with a process ID, router ID, network statement, and passive interfaces.
 
 Router 1
 
