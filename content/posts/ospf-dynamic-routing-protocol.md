@@ -479,7 +479,9 @@ Router-5#
 
 Next, check the topology table (LSDB) with the OSPF configuration shown.
 
-We can use the simple command: **show ip protocols**
+Use the simple command: **show ip protocols**.
+
+This read-only command summarises the routing protocol running on the router and some of its settings. In the example below, we can see that OSPF is enabled with a process ID, router ID, network statement, and passive interfaces. 
 
 Router 1
 
