@@ -1,11 +1,11 @@
 +++
-title = "OSPF Dynamic Routing Protocol"
+title = "Introduction to OSPF Dynamic Routing Protocol - Part 1"
 date = 2026-11-19T21:02:24.792Z
-description = "Introduction to the Open Shortest Path First protocol. "
+description = "Introduction to the Open Shortest Path First protocol - Part 1."
 tags = [ "Networking OSPF Dynamic Routing" ]
 +++
 
-To show how the OSPF protocol works, I created a topology with a few selected Cisco routers in ContainerLab. ContainerLab is amazing tool when you configure it with the VS Code extension.
+To show how the OSPF protocol works, I created a topology with a few selected Cisco routers in ContainerLab. ContainerLab is an amazing tool when you configure it with the VS Code extension.
 
 This extension is called Containerlab and provides a graphical representation of Your Topology.
 
@@ -383,4 +383,4 @@ OSPF routers discover neighbours using Hello packets. Neighbours exchange Link S
 | **Topology table / LSDB** | Describes the OSPF network topology      | `show ip ospf database` |
 | **Routing table**         | Contains the best calculated routes      | `show ip route ospf`    |
 
-Table 2 - OSPF router commands.
+Table 2 - OSPF commands to check router configuration.
