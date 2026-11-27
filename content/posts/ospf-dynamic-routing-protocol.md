@@ -387,6 +387,8 @@ Table 2 - OSPF commands to check router configuration.
 
 Below, we can observe all OSPF routing between 5 routers in the topology shown. 
 
+Router 1 can see Routers 3, 4, and 5 because Router 2 shared LSAs with it; therefore, Router 1 could properly update its LSA records in the LSDB.
+
 Router 1
 
 ```
