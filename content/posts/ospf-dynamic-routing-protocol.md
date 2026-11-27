@@ -604,3 +604,7 @@ Routing Protocol is "ospf 1"
     2.2.2.2              110      00:03:28
   Distance: (default is 110)
 ```
+
+## Summary
+
+The article demonstrates OSPF in a five-router, single-area (Area 0) ContainerLab topology. It explains how to configure OSPF, then use the routing table, neighbour table and link-state database to see what each router has learned and how OSPF finds paths. It also covers show ip protocols, which summarises the router’s OSPF settings and routing information sources.
