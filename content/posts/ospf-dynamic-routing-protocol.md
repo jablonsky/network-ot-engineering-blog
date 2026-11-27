@@ -384,3 +384,55 @@ OSPF routers discover neighbours using Hello packets. Neighbours exchange Link S
 | **Routing table**         | Contains the best calculated routes      | `show ip route ospf`    |
 
 Table 2 - OSPF commands to check router configuration.
+
+Below, we can observe all OSPF routing between 5 routers in the topology shown. 
+
+Router 1
+
+```
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.10.10.2, 00:03:45, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/21] via 10.10.10.2, 00:03:40, Ethernet0/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/21] via 10.10.10.2, 00:03:40, Ethernet0/1
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/21] via 10.10.10.2, 00:03:36, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.1.0.0/24 [110/20] via 10.10.10.2, 00:03:45, Ethernet0/1
+O        10.2.0.0/24 [110/20] via 10.10.10.2, 00:03:45, Ethernet0/1
+O        10.3.0.0/24 [110/20] via 10.10.10.2, 00:03:40, Ethernet0/1
+Router-1#
+```
+
+Router 2
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/11] via 10.10.10.1, 00:05:04, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/11] via 10.1.0.2, 00:05:03, Ethernet0/2
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/11] via 10.2.0.2, 00:05:03, Ethernet0/3
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/11] via 10.3.0.2, 00:04:58, Ethernet1/0
+Router-2#
+```
+
+Router 3
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/21] via 10.1.0.1, 00:07:04, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.1.0.1, 00:07:04, Ethernet0/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/21] via 10.1.0.1, 00:06:59, Ethernet0/1
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/21] via 10.1.0.1, 00:06:57, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.2.0.0/24 [110/20] via 10.1.0.1, 00:07:04, Ethernet0/1
+O        10.3.0.0/24 [110/20] via 10.1.0.1, 00:06:59, Ethernet0/1
+O        10.10.10.0/24 [110/20] via 10.1.0.1, 00:07:04, Ethernet0/1
+Router-3#
+```
