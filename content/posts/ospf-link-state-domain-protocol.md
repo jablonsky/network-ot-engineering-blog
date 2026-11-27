@@ -1,6 +1,6 @@
 +++
 title = "OSPF Link State Domain Protocol - Part 2"
-date = 2026-11-26T21:15:57.185Z
+date = 2026-11-28T21:15:57.185Z
 description = "Part 2 covers the area concept in OSPF and how it works."
 tags = [ "OSPF" ]
 +++
