@@ -19,3 +19,11 @@ OSPF area design creates a 2-tier hierarchy with two main types:
 An area is identified as a **32-bit number**. Area 0 is reserved for the Backbone. 
 
 &#x20;
+
+## OSPF Types of Routers
+
+In the OSPF protocol, we can identify 4 types of routers:
+
+* Internal Routers: Internal routers are routers which have all interfaces located in a single area. 
+* Backbone Routers: are routers that have at least one interface configured in Backbone area. 
+* ABR - Area Border Routers: These routers have one or more interfaces in the Backbone area and one or more interfaces in another area. 
