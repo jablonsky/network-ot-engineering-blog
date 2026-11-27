@@ -436,3 +436,39 @@ O        10.3.0.0/24 [110/20] via 10.1.0.1, 00:06:59, Ethernet0/1
 O        10.10.10.0/24 [110/20] via 10.1.0.1, 00:07:04, Ethernet0/1
 Router-3#
 ```
+
+Router 4
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/21] via 10.2.0.1, 00:08:15, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.2.0.1, 00:08:15, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/21] via 10.2.0.1, 00:08:15, Ethernet0/1
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/21] via 10.2.0.1, 00:08:07, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.1.0.0/24 [110/20] via 10.2.0.1, 00:08:15, Ethernet0/1
+O        10.3.0.0/24 [110/20] via 10.2.0.1, 00:08:10, Ethernet0/1
+O        10.10.10.0/24 [110/20] via 10.2.0.1, 00:08:15, Ethernet0/1
+Router-4#
+```
+
+Router 5
+
+```
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/21] via 10.3.0.1, 00:09:00, Ethernet0/1
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/11] via 10.3.0.1, 00:09:00, Ethernet0/1
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/21] via 10.3.0.1, 00:09:00, Ethernet0/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/21] via 10.3.0.1, 00:09:00, Ethernet0/1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+O        10.1.0.0/24 [110/20] via 10.3.0.1, 00:09:00, Ethernet0/1
+O        10.2.0.0/24 [110/20] via 10.3.0.1, 00:09:00, Ethernet0/1
+O        10.10.10.0/24 [110/20] via 10.3.0.1, 00:09:00, Ethernet0/1
+Router-5#
+```
