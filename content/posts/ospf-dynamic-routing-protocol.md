@@ -385,9 +385,11 @@ OSPF routers discover neighbours using Hello packets. Neighbours exchange Link S
 
 Table 2 - OSPF commands to check router configuration.
 
-Below, we can observe all OSPF routing between 5 routers in the topology shown. 
+Below, I can observe all OSPF routing paths on 5 routers in the topology shown. 
 
 Router 1 can see Routers 3, 4, and 5 because Router 2 shared LSAs with it; therefore, Router 1 could properly update its LSA records in the LSDB.
+
+We can prove it using the next command: **show ip route ospf**
 
 Router 1
 
@@ -474,3 +476,62 @@ O        10.2.0.0/24 [110/20] via 10.3.0.1, 00:09:00, Ethernet0/1
 O        10.10.10.0/24 [110/20] via 10.3.0.1, 00:09:00, Ethernet0/1
 Router-5#
 ```
+
+Next, check the topology table (LSDB) with the OSPF configuration shown. 
+
+We can use the simple command: **show ip protocols**
+
+Router 1
+
+```
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 1.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    1.1.1.1 0.0.0.0 area 0
+    10.10.10.1 0.0.0.0 area 0
+  Passive Interface(s):
+    Loopback0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    5.5.5.5              110      00:16:10
+    4.4.4.4              110      00:16:13
+    3.3.3.3              110      00:16:13
+    2.2.2.2              110      00:16:19
+  Distance: (default is 110)
+
+Router-1#
+```
+
+Router 2
+
+```
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 2.2.2.2
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    2.2.2.2 0.0.0.0 area 0
+    10.1.0.1 0.0.0.0 area 0
+    10.2.0.1 0.0.0.0 area 0
+    10.3.0.1 0.0.0.0 area 0
+    10.10.10.2 0.0.0.0 area 0
+  Passive Interface(s):
+    Loopback0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    5.5.5.5              110      00:22:52
+    3.3.3.3              110      00:22:57
+    4.4.4.4              110      00:22:57
+    1.1.1.1              110      00:22:57
+  Distance: (default is 110)
+
+Router-2#
+```
+
+Router 3
