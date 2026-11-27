@@ -2,7 +2,7 @@
 title = "Introduction to OSPF Dynamic Routing Protocol - Part 1"
 date = 2026-11-19T21:02:24.792Z
 description = "Introduction to the Open Shortest Path First protocol - Part 1."
-tags = [ "Networking OSPF Dynamic Routing" ]
+tags = [ "OSPF", "Dynamic Protocols", "Routing" ]
 +++
 
 # Introduction to Dynamic Routing, OSPF Protocol - Part 1
