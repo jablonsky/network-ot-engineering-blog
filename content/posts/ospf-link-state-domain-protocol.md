@@ -51,15 +51,15 @@ The Hello packet's objective is to discover the neighbours. The packet is sent p
 * Authentification data
 * Network mask
 
-The router ID is a numerical value represented as a 32-bit number in decimal form. Usually, each router has multiple IP addresses on its interfaces, so this number is not connected to interfaces and is more independent. Another important element is the hello interval. This parameter needs to be synchronised between neighbouring routers to communicate correctly. 
+The router ID is a numerical value represented as a 32-bit number in decimal form. Usually, each router has multiple IP addresses on its interfaces, so this number is not connected to interfaces and is more independent. Another important element is the hello interval. This parameter needs to be synchronised between neighbouring routers to communicate correctly.
 
 The dead interval element tells the router how long it must remember the neighbour. For example, if the dead interval is set to 40 seconds, the router waits for the neighbour for 40 seconds. However, if it still cannot hear from the neighbour after 40 seconds, it forgets about this relationship.  The router assumes the neighbour is no longer available in the topology.
 
-The neighbour ID includes the neighbour router ID and is important for two-way reachability. This concept matters for neighbour adjacency, where routers see each other and can prove it. 
+The neighbour ID includes the neighbour router ID and is important for two-way reachability. This concept matters for neighbour adjacency, where routers see each other and can prove it.
 
-The Area ID is the OSPF area where the packets belong. The next interesting field of the Hello packet is authentication data. This is the password included in the router configuration for communication. The password can be included in each Hello packet. 
+The Area ID is the OSPF area where the packets belong. The next interesting field of the Hello packet is authentication data. This is the password included in the router configuration for communication. The password can be included in each Hello packet.
 
-The network mask is the interface's subnet mask. 
+The network mask is the interface's subnet mask.
 
 Table 1 - Hello packet and its 7 elements
 
@@ -121,4 +121,18 @@ Neighbor ID     Pri   State           Dead Time   Address         Interface
 Router-1#
 ```
 
-As shown above, Router 2 with SID 2.2.2.2 remains Router 1's neighbour, in full state as the designated router. The address 10.10.10.2 comes from Router 2 interface and is achievable by interface Ethernet 0/1 on Router 1. 
+As shown above, Router 2 with SID 2.2.2.2 remains Router 1's neighbour, in full state as the designated router. The address 10.10.10.2 comes from Router 2 interface and is achievable by interface Ethernet 0/1 on Router 1.
+
+## Area Types of OSPF
+
+We can select 3 area types in the OSPF routing protocol:
+
+* Normal
+* Stub
+* NSSA
+
+| Area type                       | What it allows                                                                                                                                                                                                                   | When it’s useful                                                                                                                                         |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Normal (standard)**           | Accepts the usual OSPF route information, including external routes redistributed into OSPF.                                                                                                                                     | A general purpose area that needs full routing information.                                                                                              |
+| **Stub**                        | Blocks external routes from entering the area as Type 5 LSAs. The ABR can give routers a default route to reach destinations outside the area.                                                                                   | A branch area that does not need to know every external route.                                                                                           |
+| **NSSA** (*Not-So-Stubby Area*) | Like a stub area, it blocks external Type 5 LSAs from coming in. But it allows an ASBR *inside the area* to advertise its own external routes using Type 7 LSAs. The ABR translates those into Type 5 LSAs for the rest of OSPF. | A branch that should stay relatively simple but still needs to redistribute local routes, such as static routes or routes learned from another protocol. |
