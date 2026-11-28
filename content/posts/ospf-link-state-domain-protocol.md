@@ -11,7 +11,7 @@ Routers flood, or rather exchange, topology information. As I explained in Part 
 
 To propagate topology changes across each router's database, we need a mesh connection for redundancy. Besides, it requires high hardware capacity. The OSPF protocol provides a solution to this problem in the link-state domain model.  As mentioned before, routers exchange information to maintain the same LSDB records. Therefore, OSPF introduces an area model in which segments of the network are divided, and information is propagated in a controlled manner.
 
-![Five routers topology](/images/ospf-five-routers/top-2.png "Figure 1 - Five routers topology with added links between router 3 and 3, also router 4 and 5.")
+![Five routers topology](/images/ospf-five-routers/top-2.png "Figure 1 - Five routers topology with added links between router 3 and 3, also router 4 and 5.")Picture 1 - Five routers topology 
 
 ## Area Design
 
@@ -129,10 +129,14 @@ We can select 3 area types in the OSPF routing protocol:
 
 * Normal
 * Stub
-* NSSA
+* NSSA (Not So Stubby Area) 
+
+A normal area is neither a stub nor an NSSA area. Normal areas are the default in OSPF, and they allow all routing. A stub area is an optimisation over a normal area. 
 
 | Area type                       | What it allows                                                                                                                                                                                                                   | When it’s useful                                                                                                                                         |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Normal (standard)**           | Accepts the usual OSPF route information, including external routes redistributed into OSPF.                                                                                                                                     | A general purpose area that needs full routing information.                                                                                              |
+| **Normal (standard)**           | Accepts the usual OSPF route information, including external routes redistributed into OSPF.                                                                                                                                     | A general-purpose area that needs full routing information.                                                                                              |
 | **Stub**                        | Blocks external routes from entering the area as Type 5 LSAs. The ABR can give routers a default route to reach destinations outside the area.                                                                                   | A branch area that does not need to know every external route.                                                                                           |
 | **NSSA** (*Not-So-Stubby Area*) | Like a stub area, it blocks external Type 5 LSAs from coming in. But it allows an ASBR *inside the area* to advertise its own external routes using Type 7 LSAs. The ABR translates those into Type 5 LSAs for the rest of OSPF. | A branch that should stay relatively simple but still needs to redistribute local routes, such as static routes or routes learned from another protocol. |
+
+![](/images/ospf-five-routers/area-type.png)Picture 2 - Area types (simplified example) 
