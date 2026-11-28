@@ -37,8 +37,20 @@ In the OSPF design, routers can be different types depending on where they sit. 
 
 ## Hello Packets
 
-OSPF protocol uses HELLO packets to discover neighbours. These packets use a multicast IP address to send the message to neighbour routers. However, OSPF can send unicast to routers not operating in multicast mode. This is associated with NBMA network types, such as legacy Frame Relay Network. So, on a Cisco router, we can explicitly configure a unicast address to use in the Hello packet. 
+OSPF protocol uses HELLO packets to discover neighbours. These packets use a multicast IP address to send the message to neighbour routers. However, OSPF can send unicast to routers not operating in multicast mode. This is associated with NBMA network types, such as legacy Frame Relay Network. So, on a Cisco router, we can explicitly configure a unicast address to use in the Hello packet.
 
-My example in this article uses the broadcast method, where OSPF dynamically discovers neighbours using multicast hellos. 
+My example in this article uses the broadcast method, where OSPF dynamically discovers neighbours using multicast hellos.
 
-&#x20;
+The hollo packets objectives is to discover the neghbours. The packet is send periodically every 10 seconds in default router configurationm using IP address 244.0.0.5. Each hello packe includes 7 elements:
+
+* Router ID
+
+| Field                    | What it tells the router                                                                                    |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| **Router ID**            | The ID of the router sending the Hello.                                                                     |
+| **Hello Interval**       | How often the router sends Hello packets.                                                                   |
+| **Dead Interval**        | How long to wait without hearing a Hello before declaring the neighbour down.                               |
+| **Neighbour Router IDs** | The Router IDs of OSPF neighbours the sender has heard from on that network.                                |
+| **Area ID**              | The OSPF area the interface belongs to. Neighbours must agree on it.                                        |
+| **Authentication Data**  | Authentication information, when configured. Its use depends on the authentication method.                  |
+| **Network Mask**         | The subnet mask of the interface’s network. Neighbours on the same link generally need compatible settings. |
