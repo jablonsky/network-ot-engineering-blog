@@ -149,4 +149,6 @@ Let's think in this way. If Area 20 were a Stub area, it could not distribute 10
 
 ## Designated Router, Backup Designated Router and Priorities
 
-There are more items related to hello packets, such as the designated router, backup designated router, and priority. When a router learns a new topology, it automatically wants to spread this information to the rest of the connected routers. However, in some topologies, when routers are connected to a switch, a single router interface can multicast to many routers. Additionally the spread infrmation can flow in the loop in more complex topology. Therefore, OSPF introduces designated router (DR) and backup designated router (BDB) router role.  
+There are more items related to hello packets, such as the designated router, backup designated router, and priority. When a router learns a new topology, it automatically wants to spread this information to the rest of the connected routers. However, in some topologies, when routers are connected to a switch, a single router interface can multicast to many routers. Additionally, the spread information can flow in a loop in more complex topologies. Accordingly, OSPF introduces the designated router (DR) and backup designated router (BDR) roles.  
+
+![](/images/ospf-five-routers/routers-role.png)Picture 4 - Routers disctribution and its roles
