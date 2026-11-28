@@ -163,6 +163,8 @@ On the multi-access link, when a designated router is selected, the backup desig
 
 Here is an important thing to understand. Even when two routers are connected on the single link, they do not know the topology behind them. This means they treat each connection as a multi-access link and process the DB and BDR election.
 
-The priority number determines the selection process. Every router is set with a default priority of 1. However, we can manually change the priority to elect the router we want as the DR. 
+The priority number determines the selection process. Every router is set with a default priority of 1. However, we can manually change the priority to elect the router we want as the DR. So , this information : area type, designated router, backup designated router and priority number is also included in the hello packet.
+
+&#x20; 
 
 &#x20;
