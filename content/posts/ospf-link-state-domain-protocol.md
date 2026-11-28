@@ -41,9 +41,17 @@ OSPF protocol uses HELLO packets to discover neighbours. These packets use a mul
 
 My example in this article uses the broadcast method, where OSPF dynamically discovers neighbours using multicast hellos.
 
-The hollo packets objectives is to discover the neghbours. The packet is send periodically every 10 seconds in default router configurationm using IP address 244.0.0.5. Each hello packe includes 7 elements:
+The Hello packet's objective is to discover the neighbours. The packet is sent periodically every 10 seconds in the default router configuration, using the IP address 244.0.0.5. Each hello packet includes 7 elements:
 
 * Router ID
+* Hello interval
+* Dead interval
+* Neighbour Router ID
+* Area ID
+* Authentification data
+* Network mask
+
+Table 1 - Hello packet and its 7 elements
 
 | Field                    | What it tells the router                                                                                    |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
