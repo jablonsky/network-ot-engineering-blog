@@ -151,4 +151,8 @@ Let's think in this way. If Area 20 were a Stub area, it could not distribute 10
 
 There are more items related to hello packets, such as the designated router, backup designated router, and priority. When a router learns a new topology, it automatically wants to spread this information to the rest of the connected routers. However, in some topologies, when routers are connected to a switch, a single router interface can multicast to many routers. Additionally, the spread information can flow in a loop in more complex topologies. Accordingly, OSPF introduces the designated router (DR) and backup designated router (BDR) roles.  
 
-![](/images/ospf-five-routers/routers-role.png)Picture 4 - Routers disctribution and its roles
+![](/images/ospf-five-routers/routers-role.png)Picture 4 - Router distribution and its roles
+
+As shown in the example in Picture 4, Router 6 learned a new topology and wanted to share this information with Router 1. Next, Router 1 is ready to share the new topology information with Routers 2, 3, 4, and 5.  Following normal LSA procedure, Router 5 receives the new topology information and is also happy to share it with Routers 4, 3, 2, and 1. This is redundant, and the DR and BDR roles support it perfectly well.
+
+&#x20;
