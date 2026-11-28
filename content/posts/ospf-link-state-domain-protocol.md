@@ -157,6 +157,8 @@ As shown in the example in Picture 4, Router 6 learned a new topology and wanted
 
 For segments with multi-access links, a designated router is selected. A designated router serves as the central point for all updates on the segment links.
 
-If Router 6 is selected as the designated router, Router 1 sends new topology information to Router 6, which then shares it with the rest of the routers on the multi-access link. 
+If Router 6 is selected as the designated router, Router 1 sends new topology information to Router 6, which then shares it with the other routers on the multi-access link. 
+
+On the multi-access link, when a designated router is selected, the backup designated router is selected as well. 
 
 &#x20;
