@@ -37,4 +37,8 @@ In the OSPF design, routers can be different types depending on where they sit. 
 
 ## Hello Packets
 
-OSPF protocol uses HELLO packets to discover neighbours.
+OSPF protocol uses HELLO packets to discover neighbours. These packets use a multicast IP address to send the message to neighbour routers. However, OSPF can send unicast to routers not operating in multicast mode. This is associated with NBMA network types, such as legacy Frame Relay Network. So, on a Cisco router, we can explicitly configure a unicast address to use in the Hello packet. 
+
+My example in this article uses the broadcast method, where OSPF dynamically discovers neighbours using multicast hellos. 
+
+&#x20;
