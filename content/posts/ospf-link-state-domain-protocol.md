@@ -147,4 +147,6 @@ Let's think in this way. If Area 20 were a Stub area, it could not distribute 10
 
 ![](/images/ospf-five-routers/area-types-2.png)Picture 3 - Area types with added EIGRP Routing Protocol Area
 
-## Designated Router, Backup Designated Router and Priotities
+## Designated Router, Backup Designated Router and Priorities
+
+There are more items related to hello packets, such as the designated router, backup designated router, and priority. When a router learns a new topology, it automatically wants to spread this information to the rest of the connected routers. However, in some topologies, when routers are connected to a switch, a single router interface can multicast to many routers. Additionally the spread infrmation can flow in the loop in more complex topology. Therefore, OSPF introduces designated router (DR) and backup designated router (BDB) router role.  
