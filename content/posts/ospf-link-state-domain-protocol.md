@@ -165,6 +165,15 @@ Here is an important thing to understand. Even when two routers are connected on
 
 The priority number determines the selection process. Every router is set with a default priority of 1. However, we can manually change the priority to elect the router we want as the DR. So , this information : area type, designated router, backup designated router and priority number is also included in the hello packet.
 
-&#x20; 
+## &#x20;Adjacency information
+
+There are 6 elements which must match between routers when communicated from the hello packets:
+
+* Hello interval
+* Dead interval
+* Area ID
+* Authentication data
+* Network mask
+* Area type
 
 &#x20;
