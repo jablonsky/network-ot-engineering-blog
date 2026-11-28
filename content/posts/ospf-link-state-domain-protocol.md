@@ -72,3 +72,53 @@ Table 1 - Hello packet and its 7 elements
 | **Area ID**              | The OSPF area the interface belongs to. Neighbours must agree on it.                                        |
 | **Authentication Data**  | Authentication information, when configured. Its use depends on the authentication method.                  |
 | **Network Mask**         | The subnet mask of the interface’s network. Neighbours on the same link generally need compatible settings. |
+
+Using the CLI command: **Router# show ip ospf interface gigabitEthernet 0/0**, we can see most Hello elements associated with the router interface.
+
+Router 1
+
+```
+Router-1#show ip ospf interface e0/0
+%OSPF: OSPF not enabled on Ethernet0/0
+Router-1#show ip ospf interface e0/1
+Ethernet0/1 is up, line protocol is up 
+  Internet Address 10.10.10.1/24, Interface ID 3, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 1.1.1.1, Network Type BROADCAST, Cost: 10
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           10        no          no            Base
+  Transmit Delay is 1 sec, State BDR, Priority 1
+  Designated Router (ID) 2.2.2.2, Interface address 10.10.10.2
+  Backup Designated router (ID) 1.1.1.1, Interface address 10.10.10.1
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:06
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 2.2.2.2  (Designated Router)
+  Suppress hello for 0 neighbor(s)
+Router-1#
+```
+
+To check which router ID becomes the neighbour, we use the command: **Router# show ip ospf neighbor**
+
+Router 1
+
+```
+Router-1#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/DR         00:00:32    10.10.10.2      Ethernet0/1
+Router-1#
+```
+
+As shown above, Router 2 with SID 2.2.2.2 remains Router 1's neighbour, in full state as the designated router. The address 10.10.10.2 comes from Router 2 interface and is achievable by interface Ethernet 0/1 on Router 1. 
