@@ -143,6 +143,8 @@ If Area 30 were a normal-type area, it would have 320 routes in the database. Th
 
 ![Area types](/images/ospf-five-routers/area-type.png)Picture 2 - Area types (simplified example)
 
-Let's think in this way. If Area 20 were a Stub area, it could not distribute 10 routes from the EIGRP protocol area. But if Area 20 were a normal area, it would own 330 routes in the database. Therefore, OSPF utilises NSSA (Not So Stub Area), which is a mix of normal and stub areas. So, NSSA still does not allow redistribution, except within the area it sits in. That means Area 20 redistributes 10 routes from the EIGRP protocol area but will not allow redistributing 120 routes from the RIP protocol area.
+Let's think in this way. If Area 20 were a Stub area, it could not distribute 10 routes from the EIGRP protocol area. But if Area 20 were a normal area, it would own 330 routes in the database. Therefore, OSPF utilises NSSA (Not So Stub Area), which is a mix of normal and stub areas. So, NSSA still does not allow redistribution, except within the area it sits in. That means Area 20 redistributes 10 routes from the EIGRP protocol area but will not allow redistributing 120 routes from the RIP protocol area. This is the next optimisation for a stub area of the OSPF protocol. 
 
 ![](/images/ospf-five-routers/area-types-2.png)Picture 3 - Area types with added EIGRP Routing Protocol Area
+
+## Designated Router, Backup Designated Router and Priotities
