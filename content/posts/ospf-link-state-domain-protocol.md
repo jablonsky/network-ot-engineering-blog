@@ -51,6 +51,8 @@ The Hello packet's objective is to discover the neighbours. The packet is sent p
 * Authentification data
 * Network mask
 
+The router ID is a numerical value represented as a 32-bit number in decimal form. Usually, each router has multiple IP addresses on its interfaces, so this number is not connected to interfaces and is more independent. Another important element is the hello interval. This parameter needs to be synchronised between neighbouring routers to communicate correctly. 
+
 Table 1 - Hello packet and its 7 elements
 
 | Field                    | What it tells the router                                                                                    |
