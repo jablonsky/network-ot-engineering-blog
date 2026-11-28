@@ -155,4 +155,6 @@ There are more items related to hello packets, such as the designated router, ba
 
 As shown in the example in Picture 4, Router 6 learned a new topology and wanted to share this information with Router 1. Next, Router 1 is ready to share the new topology information with Routers 2, 3, 4, and 5.  Following normal LSA procedure, Router 5 receives the new topology information and is also happy to share it with Routers 4, 3, 2, and 1. This is redundant, and the DR and BDR roles support it perfectly well.
 
+For segments with multi-access links, a designated router is selected. A designated router stays a central point of all updates on the segment links.
+
 &#x20;
