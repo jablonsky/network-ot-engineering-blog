@@ -141,4 +141,4 @@ A normal area is neither a stub nor an NSSA area. Normal areas are the default i
 
 If Area 30 were a normal-type area, it would have 320 routes in the database. This means it will copy each router from the other areas plus its own routes. But if Area 30 were a Stub-type area, it would inherit 200 routes from all OSPF areas but would not own the 120 routes from the RIP protocol area. It demonstrates that a Stub area is an improvement over a normal-type area. Finally, it would have 200 OSPF routes and 1 redistributed route to the RIP protocol area. 
 
-![](/images/ospf-five-routers/area-type.png)Picture 2 - Area types (simplified example) 
+![Area types](/images/ospf-five-routers/area-type.png)Picture 2 - Area types (simplified example) 
