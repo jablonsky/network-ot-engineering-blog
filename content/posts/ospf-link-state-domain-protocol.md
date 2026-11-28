@@ -131,7 +131,7 @@ We can select 3 area types in the OSPF routing protocol:
 * Stub
 * NSSA (Not So Stubby Area)
 
-A normal area is neither a stub nor an NSSA area. Normal areas are the default in OSPF, and they allow all routing. A stub area is an optimisation over a normal area.
+A normal area is neither a stub nor an NSSA area. Normal areas are the OSPF default and allow all routing. A stub area is an optimisation over a normal area.
 
 | Area type                       | What it allows                                                                                                                                                                                                                   | When it’s useful                                                                                                                                         |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
