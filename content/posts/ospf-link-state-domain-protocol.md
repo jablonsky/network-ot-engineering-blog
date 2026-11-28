@@ -55,6 +55,12 @@ The router ID is a numerical value represented as a 32-bit number in decimal for
 
 The dead interval element tells the router how long it must remember the neighbour. For example, if the dead interval is set to 40 seconds, the router waits for the neighbour for 40 seconds. However, if it still cannot hear from the neighbour after 40 seconds, it forgets about this relationship.  The router assumes the neighbour is no longer available in the topology.
 
+The neighbour ID includes the neighbour router ID and is important for two-way reachability. This concept matters for neighbour adjacency, where routers see each other and can prove it. 
+
+The Area ID is the OSPF area where the packets belong. The next interesting field of the Hello packet is authentication data. This is the password included in the router configuration for communication. The password can be included in each Hello packet. 
+
+The network mask is the interface's subnet mask. 
+
 Table 1 - Hello packet and its 7 elements
 
 | Field                    | What it tells the router                                                                                    |
