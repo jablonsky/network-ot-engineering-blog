@@ -161,4 +161,8 @@ If Router 6 is selected as the designated router, Router 1 sends new topology in
 
 On the multi-access link, when a designated router is selected, the backup designated router is selected as well. 
 
+Here is an important thing to understand. Even when two routers are connected on the single link, they do not know the topology behind them. This means they treat each connection as a multi-access link and process the DB and BDR election.
+
+The priority number determines the selection process. Every router is set with a default priority of 1. Nonetheless, we can change the priority manually. 
+
 &#x20;
