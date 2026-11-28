@@ -53,6 +53,8 @@ The Hello packet's objective is to discover the neighbours. The packet is sent p
 
 The router ID is a numerical value represented as a 32-bit number in decimal form. Usually, each router has multiple IP addresses on its interfaces, so this number is not connected to interfaces and is more independent. Another important element is the hello interval. This parameter needs to be synchronised between neighbouring routers to communicate correctly. 
 
+The dead interval element tells the router how long it must remember the neighbour. For example, if the dead interval is set to 40 seconds, the router waits for the neighbour for 40 seconds. However, if it still cannot hear from the neighbour after 40 seconds, it forgets about this relationship.  The router assumes the neighbour is no longer available in the topology.
+
 Table 1 - Hello packet and its 7 elements
 
 | Field                    | What it tells the router                                                                                    |
